@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<base target="_top">
+<style>
+  body {
+    margin: 0; /* เอาขอบขาวรอบๆ หน้าเว็บออก */
+  }
+  .iframe-container {
+    width: 100%;
+    height: 100vh; /* ให้สูงเต็มหน้าจอ */
+    overflow: hidden; /* สำคัญ: ซ่อนส่วนที่ล้นกรอบออกไป */
+    position: relative;
+  }
+  .iframe-container iframe {
+    position: absolute;
+    /* ดัน iframe ขึ้นไปด้านบนเพื่อซ่อนแถบ Google */
+    top: -55px; /* หมายเหตุ: อาจต้องปรับตัวเลขนี้ (เช่น -45px หรือ -60px) ตามขนาดจริงของแถบ */
+    left: 0;
+    width: 100%;
+    /* บวกความสูงชดเชยส่วนที่ถูกดันขึ้นไป เพื่อไม่ให้ขอบล่างแหว่ง */
+    height: calc(100% + 55px); 
+    border: 0;
+  }
+</style>
 </head>
 <body>
-<iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;" src="https://script.google.com/a/macros/thaimooc.ac.th/s/AKfycbxrVlxtauXbluDvfbEWL-ly8_w74XQqeuWkeXB5frCADf8rYIh7VLFzSAPuo5M6BFla_g/exec?page=bonus"></iframe>
+
+<div class="iframe-container">
+  <iframe src="https://script.google.com/a/macros/thaimooc.ac.th/s/AKfycbxrVlxtauXbluDvfbEWL-ly8_w74XQqeuWkeXB5frCADf8rYIh7VLFzSAPuo5M6BFla_g/exec?page=bonus"></iframe>
+</div>
+
 </body>
 </html>
